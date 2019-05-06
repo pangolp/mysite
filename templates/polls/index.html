@@ -4,4 +4,28 @@
 <div class="container">
 	<h1>Lista de encuestas</h1>
 </div>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Nombre</th>
+						<th>Fecha</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for pregunta in preguntas %}
+						<tr>
+							<th><a href="{% url 'polls:detalle' pregunta.id %}">{{ pregunta.id }}</a></th>
+							<td>{{ pregunta.titulo|upper }}</td>
+							<td>{{ pregunta.fecha|date:"d - m - Y" }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
 {% endblock contenido %}
