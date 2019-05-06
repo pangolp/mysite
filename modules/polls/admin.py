@@ -9,4 +9,4 @@ class PreguntaAdmin(admin.ModelAdmin):
 
 @admin.register(Opcion)
 class OpcionAdmin(admin.ModelAdmin):
-	pass
+	list_display = ('pregunta', 'titulo', 'votos')
