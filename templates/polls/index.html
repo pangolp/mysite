@@ -3,6 +3,7 @@
 {% block contenido %}
 <div class="container">
 	<h1>Lista de encuestas</h1>
+	<a href="{% url 'polls:pregunta_create' %}" class="btn btn-sm btn-dark mt-2 mb-2">Crear pregunta</a>
 </div>
 <div class="container">
 	<div class="row">
@@ -13,14 +14,16 @@
 						<th>#</th>
 						<th>Nombre</th>
 						<th>Fecha</th>
+						<th>-</th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for pregunta in preguntas %}
 						<tr>
-							<th><a href="{% url 'polls:detalle' pregunta.id %}">{{ pregunta.id }}</a></th>
-							<td>{{ pregunta.titulo|upper }}</td>
+							<th>{{ pregunta.id }}</th>
+							<td>{{ pregunta.titulo|truncatewords:1 }}</td>
 							<td>{{ pregunta.fecha|date:"d - m - Y" }}</td>
+							<td><a href="{% url 'polls:detalle' pregunta.id %}">Ver</a></td>
 						</tr>
 					{% endfor %}
 				</tbody>

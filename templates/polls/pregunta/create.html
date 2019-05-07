@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block titulo %}Pregunta: create{% endblock titulo %}
+{% block contenido %}
+<div class="container">
+	<form action="" method="post">
+		{% csrf_token %}
+		{{ form }}
+		<br>
+		<input class="btn btn-success" type="submit" value="Crear pregunta">
+	</form>
+</div>
+{% endblock contenido %}
