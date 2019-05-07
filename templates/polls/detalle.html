@@ -7,7 +7,15 @@
 			<p>Titulo: {{ pregunta.titulo }}</p>
 			<p>Fecha: {{ pregunta.fecha }}</p>
 		</div>
-		
+	</div>
+	<div class="row">
+		<div class="col">
+			<ul>
+				{% for p in pregunta.opcion_set.all %}
+					<li>{{ p.titulo }} voto: {{ p.votos }}</li>
+				{% endfor %}
+			</ul>
+		</div>
 	</div>
 </div>
 {% endblock contenido %}
