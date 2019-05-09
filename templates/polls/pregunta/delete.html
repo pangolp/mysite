@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block titulo %}Pregunta {{ pregunta.id }}{% endblock titulo %}
+{% block contenido %}
+<form method="post">{% csrf_token %}
+	<p>¿Desea borrar esta pregunta "{{ object }}"?</p>
+	<input type="submit" value="Confirmar">
+</form>
+{% endblock contenido %}

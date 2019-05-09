@@ -14,16 +14,26 @@
 						<th>#</th>
 						<th>Nombre</th>
 						<th>Fecha</th>
-						<th>-</th>
+						<th>Modificacion</th>
+						<th>Detalle</th>
+						<th>Editar</th>
+						<th>Eliminar</th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for pregunta in preguntas %}
 						<tr>
 							<th>{{ pregunta.id }}</th>
-							<td>{{ pregunta.titulo|truncatewords:1 }}</td>
-							<td>{{ pregunta.fecha|date:"d - m - Y" }}</td>
+							{% if pregunta.creacion != pregunta.modificacion %}
+								<td>{{ pregunta.titulo }} (editado)</td>
+							{% else %}
+								<td>{{ pregunta.titulo }}</td>
+							{% endif %}
+							<td>{{ pregunta.creacion }}</td>
+							<td>{{ pregunta.modificacion }}</td>
 							<td><a href="{% url 'polls:detalle' pregunta.id %}">Ver</a></td>
+							<td><a href="{% url 'polls:pregunta_update' pregunta.id %}">Editar</a></td>
+							<td><a href="{% url 'polls:pregunta_delete' pregunta.id %}">Eliminar</a></td>
 						</tr>
 					{% endfor %}
 				</tbody>

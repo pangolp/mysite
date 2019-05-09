@@ -4,7 +4,7 @@ from .models import Pregunta, Opcion
 
 @admin.register(Pregunta)
 class PreguntaAdmin(admin.ModelAdmin):
-	list_display = ('id', 'titulo', 'fecha')
+	list_display = ('id', 'titulo')
 
 
 @admin.register(Opcion)

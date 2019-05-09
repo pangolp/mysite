@@ -4,13 +4,14 @@ from django.db import models
 # Creamos la tabla pregunta
 class Pregunta(models.Model):
 	titulo = models.CharField(max_length=200, help_text='Queremos que guardes el titulo de la pregunta')
-	fecha = models.DateTimeField(auto_now_add=True)
+	creacion = models.DateTimeField(auto_now_add=True)
+	modificacion = models.DateTimeField(auto_now=True)
 
 	class Meta:
 		verbose_name = 'pregunta'
 		verbose_name_plural = 'preguntas'
 		# Esto ordena las preguntas por fecha donde trae las ultimas primero.
-		ordering = ['-fecha']
+		ordering = ['-creacion']
 
 	def __str__(self):
 		return '%s' % (self.titulo)
