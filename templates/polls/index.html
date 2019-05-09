@@ -8,7 +8,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col">
-			<table class="table">
+			<table class="table text-center">
 				<thead>
 					<tr>
 						<th>#</th>
@@ -31,9 +31,9 @@
 							{% endif %}
 							<td>{{ pregunta.creacion }}</td>
 							<td>{{ pregunta.modificacion }}</td>
-							<td><a href="{% url 'polls:detalle' pregunta.id %}">Ver</a></td>
-							<td><a href="{% url 'polls:pregunta_update' pregunta.id %}">Editar</a></td>
-							<td><a href="{% url 'polls:pregunta_delete' pregunta.id %}">Eliminar</a></td>
+							<td><a href="{% url 'polls:detalle' pregunta.id %}"><i class="far fa-eye"></i></a></td>
+							<td><a href="{% url 'polls:pregunta_update' pregunta.id %}"><i class="fas fa-pencil-alt"></i></a></td>
+							<td><a href="{% url 'polls:pregunta_delete' pregunta.id %}"><i class="far fa-trash-alt"></i></a></td>
 						</tr>
 					{% endfor %}
 				</tbody>
