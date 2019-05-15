@@ -8,13 +8,13 @@ from .models import Pregunta
 
 class IndexView(ListView):
 	model = Pregunta
-	template_name = 'polls/pregunta/index.html'
+	template_name = 'pregunta/index.html'
 	context_object_name = 'preguntas'
 
 
 class PreguntaDetail(DetailView):
 	model = Pregunta
-	template_name = 'polls/pregunta/detalle.html'
+	template_name = 'pregunta/detalle.html'
 	context_object_name = 'pregunta'
 
 
@@ -22,18 +22,18 @@ class PreguntaDetail(DetailView):
 class PreguntaCreate(CreateView):
 	model = Pregunta
 	fields = ['titulo']
-	template_name = 'polls/pregunta/create.html'
+	template_name = 'pregunta/create.html'
 	success_url = reverse_lazy('polls:index')
 
 
 class PreguntaUpdate(UpdateView):
 	model = Pregunta
 	fields = ['titulo']
-	template_name = 'polls/pregunta/update.html'
+	template_name = 'pregunta/update.html'
 	success_url = reverse_lazy('polls:index')
 
 
 class PreguntaDelete(DeleteView):
 	model = Pregunta
-	template_name = 'polls/pregunta/delete.html'
+	template_name = 'pregunta/delete.html'
 	success_url = reverse_lazy('polls:index')
