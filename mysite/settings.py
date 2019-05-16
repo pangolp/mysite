@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 DJANGO_APPS = [
+    # Aplicaciones propias del framework
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,11 +40,16 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-MIS_APPS = [
+THIRD_PARTY_APPS = [
+    # Acá las aplicaciones de tercero, como Pillow o Rest Framework
+]
+
+LOCAL_APPS = [
+    # Acá configuramos nuestras propias aplicaciones.
     'modules.polls',
 ]
 
-INSTALLED_APPS = DJANGO_APPS + MIS_APPS
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
