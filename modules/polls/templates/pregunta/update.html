@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block titulo %}Actualizar: {{ pregunta.id }}{% endblock titulo %}
 {% block contenido %}
-<form method="post">{% csrf_token %}
-	{{ form.as_p }}
-	<input type="submit" value="Update">
-</form>
+<div class="container">
+	<div class="row">
+		<div class="col mt-3">
+			<form method="post">{% csrf_token %}
+				{{ form|crispy }}
+				<input class="btn btn-sm btn-info" type="submit" value="Actualizar">
+			</form>
+		</div>
+	</div>
+</div>
 {% endblock contenido %}

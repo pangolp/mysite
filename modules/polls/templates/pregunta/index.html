@@ -2,10 +2,12 @@
 {% block titulo %}Encuestas{% endblock titulo %}
 {% block contenido %}
 <div class="container">
-	<h1>Lista de encuestas</h1>
-	<a href="{% url 'polls:pregunta_create' %}" class="btn btn-sm btn-dark mt-2 mb-2">Crear pregunta</a>
-</div>
-<div class="container">
+	<div class="row">
+		<div class="col mt-2 mb-2">
+			<h1>Lista de preguntas</h1>
+			<a href="{% url 'polls:pregunta_create' %}" class="btn btn-sm btn-dark mt-2 mb-2">Crear pregunta</a>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col">
 			<table class="table text-center">
@@ -22,19 +24,15 @@
 				</thead>
 				<tbody>
 					{% for pregunta in preguntas %}
-						<tr>
-							<th>{{ pregunta.id }}</th>
-							{% if pregunta.creacion != pregunta.modificacion %}
-								<td>{{ pregunta.titulo }} (editado)</td>
-							{% else %}
-								<td>{{ pregunta.titulo }}</td>
-							{% endif %}
-							<td>{{ pregunta.creacion }}</td>
-							<td>{{ pregunta.modificacion }}</td>
-							<td><a href="{% url 'polls:detalle' pregunta.id %}"><i class="far fa-eye"></i></a></td>
-							<td><a href="{% url 'polls:pregunta_update' pregunta.id %}"><i class="fas fa-pencil-alt"></i></a></td>
-							<td><a href="{% url 'polls:pregunta_delete' pregunta.id %}"><i class="far fa-trash-alt"></i></a></td>
-						</tr>
+					<tr>
+						<th>{{ pregunta.id }}</th>
+						<td>{{ pregunta.titulo }}</td>
+						<td>{{ pregunta.creacion }}</td>
+						<td>{{ pregunta.modificacion }}</td>
+						<td><a href="{% url 'polls:detalle' pregunta.id %}"><i class="far fa-eye"></i></a></td>
+						<td><a href="{% url 'polls:pregunta_update' pregunta.id %}"><i class="fas fa-pencil-alt"></i></a></td>
+						<td><a href="{% url 'polls:pregunta_delete' pregunta.id %}"><i class="far fa-trash-alt"></i></a></td>
+					</tr>
 					{% endfor %}
 				</tbody>
 			</table>

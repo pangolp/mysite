@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 {% block titulo %}Pregunta {{ pregunta.id }}{% endblock titulo %}
 {% block contenido %}
-<form method="post">{% csrf_token %}
-	<p>¿Desea borrar esta pregunta "{{ object }}"?</p>
-	<input type="submit" value="Confirmar">
-</form>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 mt-3">
+				<form method="post">{% csrf_token %}
+					<p>Eliminar: <strong>{{ object }}</strong></p>
+					<input class="btn btn-sm btn-danger" type="submit" value="Confirmar">
+				</form>
+			</div>
+		</div>
+	</div>
 {% endblock contenido %}

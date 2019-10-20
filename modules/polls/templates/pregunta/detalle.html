@@ -3,18 +3,22 @@
 {% block contenido %}
 <div class="container">
 	<div class="row">
-		<div class="col">
-			<p>Titulo: {{ pregunta.titulo }}</p>
-			<p>Fecha: {{ pregunta.fecha }}</p>
+		<div class="col mt-5">
+			<p><strong>Titulo:</strong> {{ pregunta.titulo }}</p>
+			<p><strong>Fecha:</strong> {{ pregunta.creacion|date:"d-m-Y" }}</p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col">
-			<ul>
-				{% for p in pregunta.opcion_set.all %}
+		<div class="col mt-3">
+			{% if pregunta.opcion_set.all %}
+				<ul>
+					{% for p in pregunta.opcion_set.all %}
 					<li>{{ p.titulo }} ** voto: {{ p.votos }}</li>
-				{% endfor %}
-			</ul>
+					{% endfor %}
+				</ul>
+			{% else %}
+				<p class="lead">No hay votos para estar pregunta aun</p>
+			{% endif %}
 		</div>
 	</div>
 </div>
