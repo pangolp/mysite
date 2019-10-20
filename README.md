@@ -22,6 +22,7 @@ $ pip install -r requirements.txt
 * [Django 2.2](https://docs.djangoproject.com/en/2.2/)
 * [Bootstrap](https://getbootstrap.com/)
 * [Pillow](https://pillow.readthedocs.io/en/stable/installation.html)
+* [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
 
 Recuerden aplicar migraciones.
 
