@@ -1,4 +1,5 @@
 import os
+from django.urls import reverse_lazy
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -100,7 +101,7 @@ STATICFILES_DIRS = (
 )
 
 # Login
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = reverse_lazy('core:index')
 
 # Sessiones
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
