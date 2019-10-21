@@ -24,14 +24,18 @@ $ pip install -r requirements.txt
 * [Pillow](https://pillow.readthedocs.io/en/stable/installation.html)
 * [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
 
-Recuerden aplicar migraciones.
+### Recuerden aplicar migraciones.
 
 ```sh
 $ python manage.py migrate
 ```
 
-Servidor de desarrollo, a través del comando:
+### Servidor de desarrollo, a través del comando:
 
 ```sh
 $ python manage.py runserver
+```
+### Borrar las carpetas __pycache__ del proyecto
+```sh
+$ find . -type d -name __pycache__ -exec rm -r {} \+
 ```
