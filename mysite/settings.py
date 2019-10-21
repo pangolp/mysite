@@ -23,6 +23,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
+    'modules.core',
     'modules.polls',
 ]
 
@@ -100,3 +101,6 @@ STATICFILES_DIRS = (
 
 # Login
 LOGIN_REDIRECT_URL = '/'
+
+# Sessiones
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
